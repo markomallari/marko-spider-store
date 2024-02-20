@@ -1,0 +1,44 @@
+<div class="column gap-1">
+  <!-- Add Product Button -->
+  <button
+    type="button"
+    pButton
+    icon="pi pi-plus"
+    (click)="toggleAddPopup()"
+    label="Add Product"
+    class="add-product-btn custom-btn primary"
+  ></button>
+
+  <!-- Products Section -->
+  <app-products
+    [products]="products"
+    (edit)="toggleEditPopup($event)"
+    (delete)="toggleDeletePopup($event)"
+  ></app-products>
+
+  <!-- Paginator -->
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[8, 16, 24]"
+    (onPageChange)="onPageChange($event)"
+    #paginator
+  ></p-paginator>
+</div>
+
+<!-- Edit Product -->
+<app-modal
+  [product]="selectedProduct"
+  [(display)]="displayEditPopup"
+  (confirm)="onConfirmEdit($event)"
+  header="Edit Product"
+></app-modal>
+
+<!-- Add Product -->
+<app-modal
+  [(display)]="displayAddPopup"
+  (confirm)="onConfirmAdd($event)"
+  header="Add Product"
+></app-modal>
+
+<p-toast></p-toast>

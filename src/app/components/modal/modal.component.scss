@@ -1,0 +1,52 @@
+.form-wrapper {
+  .row {
+    label {
+      margin-bottom: -0.8rem;
+    }
+
+    display: contents;
+    span {
+      flex: 1;
+    }
+
+    input {
+      flex: 3;
+    }
+
+    label.label input[type="file"] {
+      position: absolute;
+      top: -1000px;
+    }
+    .label {
+      cursor: pointer;
+      border: 1px solid #cccccc;
+      padding: 15px;
+      width: 150px;
+      background: var(--bg-color-green);
+      display: inline-block;
+      color: var(--bg-color-white);
+    }
+
+    .label span {
+      color: white !important;
+    }
+
+    .ml-05 {
+      margin-left: 0.5rem !important;
+    }
+
+    .file-name {
+      margin-top: -42px;
+      font-weight: 600;
+      margin-left: 160px;
+    }
+
+    .m-top {
+      margin-top: 25px;
+    }
+  }
+
+  .rating {
+    margin-top: 0.5rem;
+  }
+}

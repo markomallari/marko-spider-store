@@ -1,0 +1,52 @@
+.wrapper {
+  width: 250px;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: transform 0.5s;
+  }
+
+  img:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .name {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .description {
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .classification {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .family {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .price-label {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .price {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}

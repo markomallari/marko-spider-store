@@ -1,0 +1,130 @@
+<p-dialog
+  [header]="header"
+  [(visible)]="display"
+  [modal]="true"
+  [closable]="false"
+  [style]="{ width: '50rem' }"
+>
+  <div class="column gap-1 form-wrapper" [formGroup]="productForm">
+    <!-- Name -->
+    <div class="row gap-05">
+      <label for="name">Name</label>
+      <input
+        pInputText
+        class="p-inputtext-sm"
+        id="name"
+        type="text"
+        formControlName="name"
+      />
+    </div>
+
+    <!-- Classification -->
+    <div class="row gap-05">
+      <label for="classification">Classification</label>
+      <input
+        pInputText
+        class="p-inputtext-sm"
+        id="classification"
+        type="text"
+        formControlName="classification"
+      />
+    </div>
+
+    <!-- Family -->
+    <div class="row gap-05">
+      <label for="family">Family</label>
+      <input
+        pInputText
+        class="p-inputtext-sm"
+        id="family"
+        type="text"
+        formControlName="family"
+      />
+    </div>
+
+    <!-- Scientific Name -->
+    <div class="row gap-05">
+      <label for="scientific_name">Scientific Name</label>
+      <input
+        pInputText
+        class="p-inputtext-sm"
+        id="scientific_name"
+        type="text"
+        formControlName="scientific_name"
+      />
+    </div>
+
+    <!-- Price -->
+    <div class="row gap-05">
+      <label for="price">Price</label>
+      <input
+        pInputText
+        class="p-inputtext-sm"
+        id="price"
+        type="number"
+        formControlName="price"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="row gap-05">
+      <label for="description">Description</label>
+      <textarea
+        rows="5"
+        cols="30"
+        [style]="{ width: '100%' }"
+        id="description"
+        pInputTextarea
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <!-- Rating -->
+    <div class="row gap-05 mt-5">
+      <label for="description">Rate</label>
+      <p-rating
+        formControlName="rating"
+        [readonly]="false"
+        iconCancelClass="hidden"
+        class="rating"
+      ></p-rating>
+    </div>
+
+    <!-- Image -->
+    <div class="row gap-05">
+      <label for="description">Image</label>
+      <label class="label">
+        <input
+          #variable
+          type="file"
+          id="fileInput"
+          (change)="onFileSelected($event)"
+          required
+        />
+        <span> Upload File <i class="pi pi-upload ml-05"></i> </span>
+      </label>
+      <p class="file-name">{{ fileName ? fileName : "" }}</p>
+    </div>
+  </div>
+
+  <!-- Footer with action buttons -->
+  <p-footer>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-check"
+      (click)="onConfirm()"
+      label="Confirm"
+      class="custom-btn primary"
+      [class.disabled]="!productForm.valid"
+    ></button>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-times"
+      (click)="onCancel(); variable.value = ''"
+      class="custom-btn delete"
+      label="Cancel"
+    ></button>
+  </p-footer>
+</p-dialog>
